@@ -45,7 +45,7 @@ class ReserveScreen extends StatelessWidget {
                     height: 32,
                   ),
                   ChooseTimeGroup(
-                    title: 'Morning',
+                    title: 'Manhã',
                     list: [
                       ChooseModel('09.00 AM'),
                       ChooseModel('09.30 AM', check: true),
@@ -59,7 +59,7 @@ class ReserveScreen extends StatelessWidget {
                     height: 32,
                   ),
                   ChooseTimeGroup(
-                    title: 'Afternoon',
+                    title: 'Tarde',
                     list: [
                       ChooseModel('02.00 PM'),
                       ChooseModel('02.30 PM'),
@@ -71,7 +71,7 @@ class ReserveScreen extends StatelessWidget {
                     height: 32,
                   ),
                   ChooseTimeGroup(
-                    title: 'Evening',
+                    title: 'Noite',
                     list: [
                       ChooseModel('06.00 PM'),
                       ChooseModel('06.30 PM'),
@@ -102,7 +102,7 @@ class ChooseSlot extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Choose Your Slot',
+          'Escolha uma data',
           style: TextStyle(
             color: mTitleTextColor,
             fontSize: 18,
@@ -116,28 +116,28 @@ class ChooseSlot extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             ChooseDate(
-              week: 'Mon',
+              week: 'Seg',
               date: '26',
             ),
             ChooseDate(
-              week: 'Tue',
+              week: 'Ter',
               date: '27',
               check: true,
             ),
             ChooseDate(
-              week: 'Wed',
+              week: 'Qua',
               date: '28',
             ),
             ChooseDate(
-              week: 'Thu',
+              week: 'Qui',
               date: '29',
             ),
             ChooseDate(
-              week: 'Fri',
+              week: 'Sex',
               date: '30',
             ),
             ChooseDate(
-              week: 'Sat',
+              week: 'Sab',
               date: '31',
             ),
           ],

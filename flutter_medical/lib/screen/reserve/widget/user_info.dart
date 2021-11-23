@@ -22,14 +22,14 @@ class UserInfo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'dr.John Doe',
+                'dr.João',
                 style: TextStyle(
                   color: mButtonColor,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text('Pulmonologist',style: TextStyle(fontSize: 12),)
+              Text('Pneumologista',style: TextStyle(fontSize: 12),)
             ],
           )
         ],
