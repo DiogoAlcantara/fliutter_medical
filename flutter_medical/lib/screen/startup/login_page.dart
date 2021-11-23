@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
-import 'package:flutter_medical/screen/reserve/reserve_screen.dart';
+import 'package:flutter_medical/screen/startup/registration_page.dart';
 import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
 
 class LoginPage extends StatelessWidget {
@@ -110,6 +110,60 @@ class LoginPage extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) {
                           return WelcomeScreen();
+                        },
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              height: 60,
+              alignment: Alignment.centerLeft,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [mButtonColor, mPrimaryTextColor],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+              ),
+              child: SizedBox.expand(
+                // ignore: deprecated_member_use
+                child: FlatButton(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        'Cadastro',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.left,
+                      ),
+                      Container(
+                        child: SizedBox(
+                          child: Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return RegistrationPage();
                         },
                       ),
                     );
