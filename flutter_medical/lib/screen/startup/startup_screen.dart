@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/screen/startup/login_page.dart';
 import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/my_header.dart';
@@ -28,7 +29,7 @@ class StartupScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Text(
-                    'Booking Apps',
+                    'Não deixe para amanhã!',
                     style: TextStyle(
                         fontSize: 32,
                         color: mTitleTextColor,
@@ -38,10 +39,10 @@ class StartupScreen extends StatelessWidget {
                     height: 32,
                   ),
                   Text(
-                    'Lorem ipsum dolor sit amet, consectetuer \n'
-                    'adipiscing elit, sed diam nonummy nibh euismod ',
+                    'Sua saúde é nossa prioridade, marque\n'
+                    ' uma consulta com um de nossos especialistas ',
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: mTitleTextColor),
+                    style: TextStyle(color: mTitleTextColor, fontSize: 18),
                   ),
                   Spacer(),
                   ClipRRect(
@@ -55,13 +56,13 @@ class StartupScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return WelcomeScreen();
+                              return LoginPage();
                             },
                           ),
                         );
                       },
                       child: Text(
-                        'Book Now',
+                        'Agende Agora',
                         style: TextStyle(fontSize: 22, color: Colors.white),
                       ),
                     ),

@@ -18,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
               children: <Widget>[
                 HeaderLogo(),
                 Text(
-                  'Welcome',
+                  'Bem Vindo!',
                   style: TextStyle(
                     fontSize: 28,
                     color: mTitleTextColor,
@@ -65,7 +65,7 @@ class WelcomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          'Our Health\nServices',
+                          'Nossos serviços\nde saúde',
                           style: TextStyle(
                             color: mTitleTextColor,
                             fontSize: 24,
@@ -88,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                     children: <Widget>[
                       MenuCard(
                         imageUrl: 'assets/images/general_practice.png',
-                        title: 'General Practice',
+                        title: 'Medicina Geral',
                         press: () {
                           Navigator.push(
                             context,
@@ -102,7 +102,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       MenuCard(
                         imageUrl: 'assets/images/specialist.png',
-                        title: 'Specialist',
+                        title: 'Especialidade',
                       ),
                     ],
                   ),
@@ -114,11 +114,11 @@ class WelcomeScreen extends StatelessWidget {
                     children: <Widget>[
                       MenuCard(
                         imageUrl: 'assets/images/sexual_health.png',
-                        title: 'Sexual Health',
+                        title: 'Saúde sexual',
                       ),
                       MenuCard(
                         imageUrl: 'assets/images/immunisation.png',
-                        title: 'Immunisation',
+                        title: 'Imunização',
                       ),
                     ],
                   ),

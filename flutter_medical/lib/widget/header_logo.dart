@@ -18,14 +18,15 @@ class HeaderLogo extends StatelessWidget {
             width: 36,
             height: 36,
           ),
-          SizedBox(width: 12,),
+          SizedBox(
+            width: 12,
+          ),
           Text(
-            'medical',
+            'HealthCare',
             style: TextStyle(
-              fontSize: 38,
-              color:mTitleTextColor,
-              fontWeight: FontWeight.bold
-            ),
+                fontSize: 38,
+                color: mTitleTextColor,
+                fontWeight: FontWeight.bold),
           ),
         ],
       ),
