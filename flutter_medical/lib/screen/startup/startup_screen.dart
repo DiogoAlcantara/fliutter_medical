@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/screen/startup/login_page.dart';
-import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 

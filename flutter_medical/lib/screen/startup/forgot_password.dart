@@ -1,102 +1,74 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
 import 'package:flutter_medical/screen/startup/login_page.dart';
-import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
 
-class RegistrationPage extends StatelessWidget {
-  const RegistrationPage({Key key}) : super(key: key);
+class ForgotPassword extends StatefulWidget {
+  const ForgotPassword({Key key}) : super(key: key);
 
+  @override
+  _ForgotPasswordState createState() => _ForgotPasswordState();
+}
+
+class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: mPrimaryTextColor,
+      ),
       body: Container(
         padding: EdgeInsets.only(
-          top: 30,
+          top: 10,
           left: 40,
           right: 40,
         ),
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 200,
-              width: 200,
-              child: Image.asset('assets/images/registration_new.png'),
+              height: 300,
+              width: 300,
+              child: Image.asset('assets/images/forgot_password.png'),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
+            ),
+            Text(
+              'Esqueceu a senha?',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              'Por favor, informe o e-mail associado a sua conta, para que possamos enviar as instruções de restauração da senha!',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w400,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 40,
             ),
             Form(
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: mTitleTextColor,
+                    size: 20,
+                  ),
                   labelText: "Email",
                   labelStyle: TextStyle(
                     color: mTitleTextColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
-                ),
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: "Confirme o email",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Senha",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: "Confirme sua senha",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
                 ),
               ),
             ),
@@ -122,7 +94,7 @@ class RegistrationPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Login',
+                        'Enviar',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -132,16 +104,7 @@ class RegistrationPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginPage();
-                        },
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                 ),
               ),
             ),
