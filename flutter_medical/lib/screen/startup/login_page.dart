@@ -12,7 +12,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController emailInputController = TextEditingController as TextEditingController;
+  TextEditingController senhaInputController = TextEditingController as TextEditingController;
   bool continuarConectado = false;
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +39,14 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Form(
               child: TextFormField(
+                validator: (value) {
+                  if (value.length < 5) {
+                    return "Email deve ter mais de 5 caracteres";
+                  } else if (!value.contains("@")) {
+                    return "Faltou o @";
+                  }
+                  return null;
+                },
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   prefixIcon: Icon(
@@ -58,7 +70,14 @@ class _LoginPageState extends State<LoginPage> {
               height: 10,
             ),
             Form(
+              key: _formKey,
               child: TextFormField(
+                validator: (value) {
+                  if (value.length < 6) {
+                    return "A senha deve conter ao menos 6 caracteres";
+                  }
+                  return null;
+                },
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(

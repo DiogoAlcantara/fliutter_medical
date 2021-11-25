@@ -29,7 +29,11 @@ class RegistrationPage extends StatelessWidget {
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: "Email",
+                  prefixIcon: Icon(
+                    Icons.person,
+                    color: mTitleTextColor,
+                  ),
+                  labelText: "Nome",
                   labelStyle: TextStyle(
                     color: mTitleTextColor,
                     fontWeight: FontWeight.bold,
@@ -48,7 +52,11 @@ class RegistrationPage extends StatelessWidget {
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: "Confirme o email",
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: mTitleTextColor,
+                  ),
+                  labelText: "Email",
                   labelStyle: TextStyle(
                     color: mTitleTextColor,
                     fontWeight: FontWeight.bold,
@@ -68,6 +76,10 @@ class RegistrationPage extends StatelessWidget {
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.vpn_key,
+                    color: mTitleTextColor,
+                  ),
                   labelText: "Senha",
                   labelStyle: TextStyle(
                     color: mTitleTextColor,
@@ -88,6 +100,10 @@ class RegistrationPage extends StatelessWidget {
                 keyboardType: TextInputType.text,
                 obscureText: true,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.vpn_key,
+                    color: mTitleTextColor,
+                  ),
                   labelText: "Confirme sua senha",
                   labelStyle: TextStyle(
                     color: mTitleTextColor,
