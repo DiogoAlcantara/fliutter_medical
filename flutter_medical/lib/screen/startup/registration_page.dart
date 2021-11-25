@@ -17,9 +17,9 @@ class RegistrationPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             SizedBox(
-              height: 150,
-              width: 150,
-              child: Image.asset('assets/images/registration.png'),
+              height: 200,
+              width: 200,
+              child: Image.asset('assets/images/registration_new.png'),
             ),
             SizedBox(
               height: 20,

@@ -103,6 +103,16 @@ class WelcomeScreen extends StatelessWidget {
                       MenuCard(
                         imageUrl: 'assets/images/specialist.png',
                         title: 'Especialidade',
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ReserveScreen();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -115,10 +125,30 @@ class WelcomeScreen extends StatelessWidget {
                       MenuCard(
                         imageUrl: 'assets/images/sexual_health.png',
                         title: 'Saúde sexual',
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ReserveScreen();
+                              },
+                            ),
+                          );
+                        },
                       ),
                       MenuCard(
                         imageUrl: 'assets/images/immunisation.png',
                         title: 'Imunização',
+                        press: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return ReserveScreen();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ],
                   ),
