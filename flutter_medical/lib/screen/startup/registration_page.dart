@@ -1,10 +1,28 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/model/user_model.dart';
 import 'package:flutter_medical/screen/startup/login_page.dart';
-import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
+import 'package:flutter_medical/values/preferences_keys.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class RegistrationPage extends StatelessWidget {
+class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key key}) : super(key: key);
+
+  @override
+  _RegistrationPageState createState() => _RegistrationPageState();
+}
+
+class _RegistrationPageState extends State<RegistrationPage> {
+  TextEditingController _nameInputController = TextEditingController();
+  TextEditingController _mailInputController = TextEditingController();
+  TextEditingController _passwordInputController = TextEditingController();
+  TextEditingController _confirmInputController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+
+  bool showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,95 +44,154 @@ class RegistrationPage extends StatelessWidget {
               height: 20,
             ),
             Form(
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.person,
-                    color: mTitleTextColor,
+              key: _formKey,
+              child: Column(
+                children: [
+                  TextFormField(
+                    controller: _nameInputController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Campo obrigatório";
+                      } else if (value.length < 10) {
+                        return "O campo nome de ter ao menos 10 caracteres";
+                      }
+                      return null;
+                    },
+                    autofocus: true,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.person,
+                        color: mTitleTextColor,
+                      ),
+                      labelText: "Nome",
+                      labelStyle: TextStyle(
+                        color: mTitleTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
                   ),
-                  labelText: "Nome",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  SizedBox(
+                    height: 10,
                   ),
-                ),
-                style: TextStyle(
-                  fontSize: 18,
-                ),
+                  TextFormField(
+                    controller: _mailInputController,
+                    validator: (value) {
+                      if (value.isEmpty) {
+                        return "Campo obrigatório";
+                      } else if (value.length < 5) {
+                        return "Email curto demais";
+                      } else if (!value.contains("@")) {
+                        return "Faltou o @";
+                      }
+                      return null;
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.email,
+                        color: mTitleTextColor,
+                      ),
+                      labelText: "Email",
+                      labelStyle: TextStyle(
+                        color: mTitleTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    controller: _passwordInputController,
+                    validator: (value) {
+                      if (value.length < 6) {
+                        return "A senha deve conter ao menos 6 caracteres";
+                      }
+                      return null;
+                    },
+                    keyboardType: TextInputType.text,
+                    obscureText: (this.showPassword == true) ? false : true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.vpn_key,
+                        color: mTitleTextColor,
+                      ),
+                      labelText: "Senha",
+                      labelStyle: TextStyle(
+                        color: mTitleTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  TextFormField(
+                    keyboardType: TextInputType.text,
+                    controller: _confirmInputController,
+                    validator: (value) {
+                      if (value.length < 6) {
+                        return "A senha deve conter ao menos 6 caracteres";
+                      }
+                      return null;
+                    },
+                    obscureText: (this.showPassword == true) ? false : true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(
+                        Icons.vpn_key,
+                        color: mTitleTextColor,
+                      ),
+                      labelText: "Confirme sua senha",
+                      labelStyle: TextStyle(
+                        color: mTitleTextColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
               ),
             ),
             SizedBox(
               height: 10,
             ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.email,
-                    color: mTitleTextColor,
-                  ),
-                  labelText: "Email",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
+            Row(
+              children: [
+                Checkbox(
+                  value: this.showPassword,
+                  onChanged: (bool newValue) {
+                    setState(
+                      () {
+                        this.showPassword = newValue;
+                      },
+                    );
+                  },
+                ),
+                Text(
+                  'Mostrar senha',
+                  style: TextStyle(
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.vpn_key,
                     color: mTitleTextColor,
                   ),
-                  labelText: "Senha",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Form(
-              child: TextFormField(
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.vpn_key,
-                    color: mTitleTextColor,
-                  ),
-                  labelText: "Confirme sua senha",
-                  labelStyle: TextStyle(
-                    color: mTitleTextColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                style: TextStyle(
-                  fontSize: 20,
-                ),
-              ),
+                )
+              ],
             ),
             SizedBox(
               height: 40,
@@ -133,12 +210,12 @@ class RegistrationPage extends StatelessWidget {
                 ),
               ),
               child: SizedBox.expand(
-                child: TextButton(
+                child: ElevatedButton(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        'Login',
+                        'Cadastre-se',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -149,14 +226,7 @@ class RegistrationPage extends StatelessWidget {
                     ],
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return LoginPage();
-                        },
-                      ),
-                    );
+                    _doSignUp();
                   },
                 ),
               ),
@@ -174,6 +244,22 @@ class RegistrationPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void _doSignUp() async {
+    if (_formKey.currentState.validate()) {
+      print("Válido");
+    } else {
+      print("Erro");
+    }
+  }
+
+  void _saveUser(User user) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString(
+      PreferencesKeys.activeUser,
+      json.encode(user.toJson()),
     );
   }
 }
