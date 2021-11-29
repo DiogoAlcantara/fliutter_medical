@@ -1,11 +1,9 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/constants/constant.dart';
 import 'package:flutter_medical/model/user_model.dart';
-import 'package:flutter_medical/screen/startup/login_page.dart';
+import 'package:flutter_medical/pages/startup/login_page.dart';
 import 'package:flutter_medical/values/preferences_keys.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key key}) : super(key: key);
@@ -28,6 +26,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.only(
           top: 30,
           left: 40,
@@ -249,17 +248,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   void _doSignUp() async {
     if (_formKey.currentState.validate()) {
-      print("Válido");
+      print("Usuário cadastrado com sucesso!");
     } else {
       print("Erro");
     }
-  }
-
-  void _saveUser(User user) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString(
-      PreferencesKeys.activeUser,
-      json.encode(user.toJson()),
-    );
   }
 }

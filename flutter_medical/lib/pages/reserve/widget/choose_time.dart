@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/constants/constant.dart';
 
 class ChooseTime extends StatelessWidget {
   final String time;

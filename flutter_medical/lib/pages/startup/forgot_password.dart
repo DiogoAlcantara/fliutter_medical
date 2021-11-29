@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
-import 'package:flutter_medical/screen/startup/login_page.dart';
+import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/pages/startup/login_page.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key key}) : super(key: key);

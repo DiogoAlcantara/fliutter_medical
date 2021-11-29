@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
+import 'package:flutter_medical/constants/constant.dart';
 import 'package:flutter_medical/model/choose_model.dart';
-import 'package:flutter_medical/screen/reserve/widget/choose_time.dart';
+import 'package:flutter_medical/pages/reserve/widget/choose_time.dart';
 
 
 class ChooseTimeGroup extends StatelessWidget {
@@ -39,7 +39,7 @@ class ChooseTimeGroup extends StatelessWidget {
   }
 
   List<Widget> buildItem(){
-    List<Widget> widgets = List();
+    List<Widget> widgets = [];
     for (ChooseModel item in list) {
       widgets.add(
         ChooseTime(time:item.time,check: item.check,)

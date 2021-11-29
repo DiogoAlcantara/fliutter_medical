@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
-import 'package:flutter_medical/screen/startup/forgot_password.dart';
-import 'package:flutter_medical/screen/startup/registration_page.dart';
-import 'package:flutter_medical/screen/welcome/welcome_screen.dart';
+import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/pages/startup/forgot_password.dart';
+import 'package:flutter_medical/pages/startup/registration_page.dart';
+import 'package:flutter_medical/pages/welcome/welcome_screen.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
@@ -22,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.only(
           top: 40,
           left: 40,
@@ -180,6 +181,14 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     onPressed: () {
                       _doLogin();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return WelcomeScreen();
+                          },
+                        ),
+                      );
                     },
                   ),
                 ),

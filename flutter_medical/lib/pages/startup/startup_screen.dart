@@ -1,6 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constant.dart';
-import 'package:flutter_medical/screen/startup/login_page.dart';
+import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/pages/startup/login_page.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
@@ -11,7 +13,7 @@ class StartupScreen extends StatelessWidget {
       body: Column(
         children: <Widget>[
           MyHeader(
-            height: 535,
+            height: 480,
             imageUrl: 'assets/images/doctor.png',
             child: HeaderLogo(),
           ),
