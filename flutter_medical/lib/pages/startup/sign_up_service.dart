@@ -14,5 +14,6 @@ class SignUpService {
         },
       ),
     );
+    print(response.body);
   }
 }

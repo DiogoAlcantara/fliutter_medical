@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({
@@ -26,7 +26,7 @@ class UserInfo extends StatelessWidget {
               Text(
                 'Dr.João',
                 style: TextStyle(
-                  color: mButtonColor,
+                  color: AppConsts.mButtonColor,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),

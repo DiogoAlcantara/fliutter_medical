@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class HeaderLogo extends StatelessWidget {
   const HeaderLogo({
@@ -25,7 +25,7 @@ class HeaderLogo extends StatelessWidget {
             'HealthCare',
             style: TextStyle(
                 fontSize: 38,
-                color: mTitleTextColor,
+                color: AppConsts.mTitleTextColor,
                 fontWeight: FontWeight.bold),
           ),
         ],

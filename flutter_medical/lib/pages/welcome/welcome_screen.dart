@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/reserve/reserve_screen.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/menu_card.dart';
@@ -21,7 +21,7 @@ class WelcomeScreen extends StatelessWidget {
                   'Bem Vindo!',
                   style: TextStyle(
                     fontSize: 28,
-                    color: mTitleTextColor,
+                    color: AppConsts.mTitleTextColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -32,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
                   'Lorem ipsum dolor sit amet,\n consectetuer adipiscing elit',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: mTitleTextColor,
+                    color: AppConsts.mTitleTextColor,
                   ),
                 ),
                 Spacer(),
@@ -52,7 +52,7 @@ class WelcomeScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [mBackgroundColor, mSecondBackgroundColor],
+                  colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -67,14 +67,14 @@ class WelcomeScreen extends StatelessWidget {
                         Text(
                           'Nossos serviços\nde saúde',
                           style: TextStyle(
-                            color: mTitleTextColor,
+                            color: AppConsts.mTitleTextColor,
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Icon(
                           Icons.menu,
-                          color: mSecondBackgroundColor,
+                          color: AppConsts.mSecondBackgroundColor,
                           size: 36,
                         ),
                       ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/startup/forgot_password.dart';
-import 'package:flutter_medical/pages/startup/registration_page.dart';
+import 'package:flutter_medical/pages/startup/sign_up_page.dart';
 import 'package:flutter_medical/pages/welcome/welcome_screen.dart';
 
 class LoginPage extends StatefulWidget {
@@ -20,6 +20,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    AppConsts.setWidhtSize(MediaQuery.of(context).size.width);
+    AppConsts.setHeightSize(MediaQuery.of(context).size.height);
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -57,12 +59,12 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.mail,
-                          color: mPrimaryTextColor,
+                          color: AppConsts.mPrimaryTextColor,
                           size: 16,
                         ),
                         labelText: "Email",
                         labelStyle: TextStyle(
-                          color: mTitleTextColor,
+                          color: AppConsts.mTitleTextColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -87,12 +89,12 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.vpn_key,
-                          color: mPrimaryTextColor,
+                          color: AppConsts.mPrimaryTextColor,
                           size: 18,
                         ),
                         labelText: "Senha",
                         labelStyle: TextStyle(
-                          color: mTitleTextColor,
+                          color: AppConsts.mTitleTextColor,
                           fontWeight: FontWeight.bold,
                           fontSize: 18,
                         ),
@@ -112,7 +114,7 @@ class _LoginPageState extends State<LoginPage> {
                     "Esqueceu a senha?",
                     style: TextStyle(
                       fontSize: 12,
-                      color: mPrimaryTextColor,
+                      color: AppConsts.mPrimaryTextColor,
                     ),
                   ),
                   onPressed: () {
@@ -141,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                   Text(
                     'Continuar conectado?',
                     style: TextStyle(
-                      color: mPrimaryTextColor,
+                      color: AppConsts.mPrimaryTextColor,
                       fontWeight: FontWeight.bold,
                     ),
                   )
@@ -155,7 +157,10 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [mButtonColor, mPrimaryTextColor],
+                    colors: [
+                      AppConsts.mButtonColor,
+                      AppConsts.mPrimaryTextColor
+                    ],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
@@ -205,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                 'Ainda não tem uma conta?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: mPrimaryTextColor,
+                  color: AppConsts.mPrimaryTextColor,
                 ),
               ),
               Padding(
@@ -238,7 +243,7 @@ class _LoginPageState extends State<LoginPage> {
                           'Cadastre-se',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: mPrimaryTextColor,
+                            color: AppConsts.mPrimaryTextColor,
                             fontSize: 20,
                           ),
                           textAlign: TextAlign.left,
@@ -263,7 +268,10 @@ class _LoginPageState extends State<LoginPage> {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [mBackgroundColor, mSecondBackgroundColor],
+            colors: [
+              AppConsts.mBackgroundColor,
+              AppConsts.mSecondBackgroundColor
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

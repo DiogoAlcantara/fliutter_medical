@@ -1,9 +1,6 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
-import 'package:flutter_medical/model/user_model.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/startup/login_page.dart';
-import 'package:flutter_medical/values/preferences_keys.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key key}) : super(key: key);
@@ -24,6 +21,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
+    AppConsts.setWidhtSize(MediaQuery.of(context).size.width);
+    AppConsts.setHeightSize(MediaQuery.of(context).size.height);
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -61,11 +60,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.person,
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                       ),
                       labelText: "Nome",
                       labelStyle: TextStyle(
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -93,11 +92,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.email,
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                       ),
                       labelText: "Email",
                       labelStyle: TextStyle(
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -122,11 +121,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.vpn_key,
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                       ),
                       labelText: "Senha",
                       labelStyle: TextStyle(
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -151,11 +150,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.vpn_key,
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                       ),
                       labelText: "Confirme sua senha",
                       labelStyle: TextStyle(
-                        color: mTitleTextColor,
+                        color: AppConsts.mTitleTextColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       ),
@@ -187,7 +186,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: mTitleTextColor,
+                    color: AppConsts.mTitleTextColor,
                   ),
                 )
               ],
@@ -200,7 +199,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [mButtonColor, mPrimaryTextColor],
+                  colors: [AppConsts.mButtonColor, AppConsts.mPrimaryTextColor],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -237,7 +236,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [mBackgroundColor, mSecondBackgroundColor],
+            colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

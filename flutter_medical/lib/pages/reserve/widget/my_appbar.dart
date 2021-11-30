@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class MyAppbar extends StatelessWidget {
   const MyAppbar({
@@ -16,7 +16,7 @@ class MyAppbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Icon(Icons.arrow_back_ios),
-            Icon(Icons.menu,color: mSecondBackgroundColor,size: 36,)
+            Icon(Icons.menu,color: AppConsts.mSecondBackgroundColor,size: 36,)
           ],
         ),
       ),

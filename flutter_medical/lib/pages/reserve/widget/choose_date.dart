@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class ChooseDate extends StatelessWidget {
   final String week;
@@ -20,7 +20,7 @@ class ChooseDate extends StatelessWidget {
         Text(
           week,
           style: TextStyle(
-            color: mTitleTextColor,
+            color: AppConsts.mTitleTextColor,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
@@ -33,15 +33,15 @@ class ChooseDate extends StatelessWidget {
           height: 48,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: check ? mYellowColor : Colors.transparent,
+            color: check ? AppConsts.mYellowColor : Colors.transparent,
             border: Border.all(
-                color: check ? mYellowColor : mTitleTextColor, width: 0.5),
+                color: check ? AppConsts.mYellowColor : AppConsts.mTitleTextColor, width: 0.5),
             borderRadius: BorderRadius.circular(36),
           ),
           child: Text(
             date,
             style: TextStyle(
-              color: check ? Colors.white : mTitleTextColor,
+              color: check ? Colors.white : AppConsts.mTitleTextColor,
               fontSize: 16,
             ),
           ),

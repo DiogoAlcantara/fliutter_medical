@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/model/choose_model.dart';
 import 'package:flutter_medical/pages/reserve/widget/choose_date.dart';
 import 'package:flutter_medical/pages/reserve/widget/choose_time_group.dart';
@@ -32,7 +32,7 @@ class ReserveScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [mBackgroundColor, mSecondBackgroundColor],
+                  colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -104,7 +104,7 @@ class ChooseSlot extends StatelessWidget {
         Text(
           'Escolha uma data',
           style: TextStyle(
-            color: mTitleTextColor,
+            color: AppConsts.mTitleTextColor,
             fontSize: 18,
             fontWeight: FontWeight.bold,
           ),

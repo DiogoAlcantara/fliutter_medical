@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class MenuCard extends StatelessWidget {
   final String imageUrl;
@@ -30,7 +30,7 @@ class MenuCard extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              color: mTitleTextColor,
+              color: AppConsts.mTitleTextColor,
               fontWeight: FontWeight.w500,
             ),
           )

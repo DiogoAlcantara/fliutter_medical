@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/constants/constant.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/startup/login_page.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -12,9 +12,11 @@ class ForgotPassword extends StatefulWidget {
 class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
+    AppConsts.setWidhtSize(MediaQuery.of(context).size.width);
+    AppConsts.setHeightSize(MediaQuery.of(context).size.height);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: mPrimaryTextColor,
+        backgroundColor: AppConsts.mPrimaryTextColor,
       ),
       body: Container(
         padding: EdgeInsets.only(
@@ -60,12 +62,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 decoration: InputDecoration(
                   prefixIcon: Icon(
                     Icons.email,
-                    color: mTitleTextColor,
+                    color: AppConsts.mTitleTextColor,
                     size: 20,
                   ),
                   labelText: "Email",
                   labelStyle: TextStyle(
-                    color: mTitleTextColor,
+                    color: AppConsts.mTitleTextColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
                   ),
@@ -80,7 +82,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [mButtonColor, mPrimaryTextColor],
+                  colors: [AppConsts.mButtonColor, AppConsts.mPrimaryTextColor],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -115,7 +117,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [mBackgroundColor, mSecondBackgroundColor],
+            colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
