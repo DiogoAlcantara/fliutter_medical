@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_medical/pages/startup/login_service.dart';
 import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/startup/forgot_password.dart';
 import 'package:flutter_medical/pages/startup/sign_up_page.dart';
@@ -20,8 +21,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    AppConsts.setWidhtSize(MediaQuery.of(context).size.width);
-    AppConsts.setHeightSize(MediaQuery.of(context).size.height);
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -278,5 +277,14 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void _doLogin() async {
+    if (_formKey.currentState.validate()) {
+      LoginService()
+          .login(_emailInputController.text, _passwordInputController.text);
+    } else {
+      print("invalido");
+    }
   }
 }

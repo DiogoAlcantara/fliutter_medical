@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_medical/pages/startup/sign_up_service.dart';
 import 'package:flutter_medical/utils/consts.dart';
-import 'package:flutter_medical/pages/startup/login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key key}) : super(key: key);
@@ -113,8 +113,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     validator: (value) {
                       if (value.length < 6) {
                         return "A senha deve conter ao menos 6 caracteres";
-                      }
-                      return null;
+                      } else
+                        return null;
                     },
                     keyboardType: TextInputType.text,
                     obscureText: (this.showPassword == true) ? false : true,
@@ -143,8 +143,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     validator: (value) {
                       if (value.length < 6) {
                         return "A senha deve conter ao menos 6 caracteres";
-                      }
-                      return null;
+                      } else
+                        return null;
                     },
                     obscureText: (this.showPassword == true) ? false : true,
                     decoration: InputDecoration(
@@ -236,7 +236,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
+            colors: [
+              AppConsts.mBackgroundColor,
+              AppConsts.mSecondBackgroundColor
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -247,7 +250,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   void _doSignUp() async {
     if (_formKey.currentState.validate()) {
-      print("Usuário cadastrado com sucesso!");
+      SignUpService().signUp(
+        _mailInputController.text,
+        _passwordInputController.text,
+      );
     } else {
       print("Erro");
     }
