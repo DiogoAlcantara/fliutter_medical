@@ -7,7 +7,7 @@ import 'package:flutter_medical/pages/reserve/widget/my_appbar.dart';
 import 'package:flutter_medical/pages/reserve/widget/user_info.dart';
 import 'package:flutter_medical/widget/my_header.dart';
 
-class ReserveScreen extends StatelessWidget {
+class ReserveScreenSpecialist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +22,7 @@ class ReserveScreen extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                UserInfo(),
+                UserInfoEspecialist(),
               ],
             ),
           ),
@@ -32,7 +32,10 @@ class ReserveScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
+                  colors: [
+                    AppConsts.mBackgroundColor,
+                    AppConsts.mSecondBackgroundColor
+                  ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -48,7 +51,7 @@ class ReserveScreen extends StatelessWidget {
                     title: 'Manhã',
                     list: [
                       ChooseModel('09.00 AM'),
-                      ChooseModel('09.30 AM', check: true),
+                      ChooseModel('09.30 AM'),
                       ChooseModel('10.30 AM'),
                       ChooseModel('11.00 AM'),
                       ChooseModel('11.30 AM'),
@@ -61,10 +64,10 @@ class ReserveScreen extends StatelessWidget {
                   ChooseTimeGroup(
                     title: 'Tarde',
                     list: [
-                      ChooseModel('02.00 PM'),
-                      ChooseModel('02.30 PM'),
-                      ChooseModel('03.00 PM'),
-                      ChooseModel('03.30 PM'),
+                      ChooseModel('13.00 PM'),
+                      ChooseModel('13.30 PM'),
+                      ChooseModel('15.00 PM'),
+                      ChooseModel('16.30 PM', check: true),
                     ],
                   ),
                   SizedBox(
@@ -73,12 +76,9 @@ class ReserveScreen extends StatelessWidget {
                   ChooseTimeGroup(
                     title: 'Noite',
                     list: [
-                      ChooseModel('06.00 PM'),
-                      ChooseModel('06.30 PM'),
-                      ChooseModel('07.00 PM'),
-                      ChooseModel('07.30 PM'),
-                      ChooseModel('08.00 PM'),
-                      ChooseModel('08.30 PM'),
+                      ChooseModel('18.00 PM'),
+                      ChooseModel('19.00 PM'),
+                      ChooseModel('20.30 PM'),
                     ],
                   ),
                 ],
@@ -122,7 +122,6 @@ class ChooseSlot extends StatelessWidget {
             ChooseDate(
               week: 'Ter',
               date: '27',
-              check: true,
             ),
             ChooseDate(
               week: 'Qua',
@@ -139,6 +138,7 @@ class ChooseSlot extends StatelessWidget {
             ChooseDate(
               week: 'Sab',
               date: '31',
+              check: true,
             ),
           ],
         )

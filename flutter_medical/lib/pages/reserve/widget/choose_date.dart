@@ -21,7 +21,7 @@ class ChooseDate extends StatelessWidget {
           week,
           style: TextStyle(
             color: AppConsts.mTitleTextColor,
-            fontSize: 14,
+            fontSize: 18,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -35,14 +35,16 @@ class ChooseDate extends StatelessWidget {
           decoration: BoxDecoration(
             color: check ? AppConsts.mYellowColor : Colors.transparent,
             border: Border.all(
-                color: check ? AppConsts.mYellowColor : AppConsts.mTitleTextColor, width: 0.5),
+                color:
+                    check ? AppConsts.mYellowColor : AppConsts.mTitleTextColor,
+                width: 0.5),
             borderRadius: BorderRadius.circular(36),
           ),
           child: Text(
             date,
             style: TextStyle(
               color: check ? Colors.white : AppConsts.mTitleTextColor,
-              fontSize: 16,
+              fontSize: 20,
             ),
           ),
         ),

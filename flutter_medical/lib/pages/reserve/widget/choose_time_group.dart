@@ -3,14 +3,14 @@ import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/model/choose_model.dart';
 import 'package:flutter_medical/pages/reserve/widget/choose_time.dart';
 
-
 class ChooseTimeGroup extends StatelessWidget {
-
   final String title;
   final List<ChooseModel> list;
 
   const ChooseTimeGroup({
-    Key key, this.title, this.list,
+    Key key,
+    this.title,
+    this.list,
   }) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class ChooseTimeGroup extends StatelessWidget {
           title,
           style: TextStyle(
             color: AppConsts.mTitleTextColor,
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -32,20 +32,20 @@ class ChooseTimeGroup extends StatelessWidget {
         Wrap(
           runSpacing: 12,
           spacing: 12,
-          children:buildItem(),
+          children: buildItem(),
         )
       ],
     );
   }
 
-  List<Widget> buildItem(){
+  List<Widget> buildItem() {
     List<Widget> widgets = [];
     for (ChooseModel item in list) {
-      widgets.add(
-        ChooseTime(time:item.time,check: item.check,)
-      );
+      widgets.add(ChooseTime(
+        time: item.time,
+        check: item.check,
+      ));
     }
     return widgets;
   }
-
 }

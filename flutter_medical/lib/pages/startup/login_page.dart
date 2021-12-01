@@ -185,15 +185,15 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     onPressed: () {
-                      _doLogin();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return WelcomeScreen();
-                          },
-                        ),
-                      );
+                      if (_formKey.currentState.validate())
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return WelcomeScreen();
+                            },
+                          ),
+                        );
                     },
                   ),
                 ),
@@ -278,13 +278,5 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  void _doLogin() async {
-    if (_formKey.currentState.validate()) {
-      print("Válido");
-    } else {
-      print("Erro");
-    }
   }
 }

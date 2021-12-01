@@ -18,13 +18,15 @@ class ChooseTime extends StatelessWidget {
       decoration: BoxDecoration(
         color: check ? AppConsts.mYellowColor : Colors.transparent,
         border: Border.all(
-            color: check ? AppConsts.mYellowColor : AppConsts.mTitleTextColor, width: 0.5),
+            color: check ? AppConsts.mYellowColor : AppConsts.mTitleTextColor,
+            width: 0.5),
         borderRadius: BorderRadius.circular(36),
       ),
       child: Text(
         time,
         style: TextStyle(
-            fontSize: 12, color: check ? Colors.white : AppConsts.mTitleTextColor),
+            fontSize: 13,
+            color: check ? Colors.white : AppConsts.mTitleTextColor),
       ),
     );
   }

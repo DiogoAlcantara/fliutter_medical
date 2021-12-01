@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_medical/pages/reserve/reserve_screen_especialist.dart';
+import 'package:flutter_medical/pages/reserve/reserve_screen_sexual_health.dart';
 import 'package:flutter_medical/utils/consts.dart';
-import 'package:flutter_medical/pages/reserve/reserve_screen.dart';
+import 'package:flutter_medical/pages/reserve/reserve_screen_pratice_general.dart';
 import 'package:flutter_medical/widget/header_logo.dart';
 import 'package:flutter_medical/widget/menu_card.dart';
 import 'package:flutter_medical/widget/my_header.dart';
@@ -29,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  'Lorem ipsum dolor sit amet,\n consectetuer adipiscing elit',
+                  'Cuide da sua saúde hoje\n Agende uma consulta com nossos especialistas',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: AppConsts.mTitleTextColor,
@@ -52,7 +54,10 @@ class WelcomeScreen extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
+                  colors: [
+                    AppConsts.mBackgroundColor,
+                    AppConsts.mSecondBackgroundColor
+                  ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
@@ -108,7 +113,7 @@ class WelcomeScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return ReserveScreen();
+                                return ReserveScreenSpecialist();
                               },
                             ),
                           );
@@ -130,7 +135,7 @@ class WelcomeScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return ReserveScreen();
+                                return ReserveScreenSexualHealth();
                               },
                             ),
                           );
