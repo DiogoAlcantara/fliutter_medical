@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/pages/startup/login_service.dart';
-import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/pages/startup/forgot_password.dart';
 import 'package:flutter_medical/pages/startup/sign_up_page.dart';
 import 'package:flutter_medical/pages/welcome/welcome_screen.dart';
+import 'package:flutter_medical/utils/consts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key key}) : super(key: key);
@@ -156,10 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: Alignment.centerLeft,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      AppConsts.mButtonColor,
-                      AppConsts.mPrimaryTextColor
-                    ],
+                    colors: [AppConsts.mButtonColor, AppConsts.mPrimaryTextColor],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                   ),
@@ -267,10 +263,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              AppConsts.mBackgroundColor,
-              AppConsts.mSecondBackgroundColor
-            ],
+            colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -279,12 +272,12 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void _doLogin() async {
-    if (_formKey.currentState.validate()) {
-      LoginService()
-          .login(_emailInputController.text, _passwordInputController.text);
-    } else {
-      print("invalido");
-    }
-  }
+  // void _doLogin() async {
+  //   if (_formKey.currentState.validate()) {
+  //     LoginService()
+  //         .login(_emailInputController.text, _passwordInputController.text);
+  //   } else {
+  //     print("invalido");
+  //   }
+  // }
 }

@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_medical/utils/consts.dart';
-import 'package:flutter_medical/model/choose_model.dart';
 import 'package:flutter_medical/pages/reserve/widget/choose_date.dart';
 import 'package:flutter_medical/pages/reserve/widget/choose_time_group.dart';
 import 'package:flutter_medical/pages/reserve/widget/my_appbar.dart';
 import 'package:flutter_medical/pages/reserve/widget/user_info.dart';
+import 'package:flutter_medical/utils/consts.dart';
 import 'package:flutter_medical/widget/my_header.dart';
+
+import '../../model/choose_model.dart';
 
 class ReserveScreenSpecialist extends StatelessWidget {
   @override
@@ -32,10 +34,7 @@ class ReserveScreenSpecialist extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [
-                    AppConsts.mBackgroundColor,
-                    AppConsts.mSecondBackgroundColor
-                  ],
+                  colors: [AppConsts.mBackgroundColor, AppConsts.mSecondBackgroundColor],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
